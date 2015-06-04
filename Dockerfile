@@ -11,7 +11,7 @@ RUN mkdir /Gocode
 RUN yum -y install --setopt=tsflags=nodocs golang git mercurial && \ 
     yum -y erase --setopt=clean_requirements_on_remove=true vim-minimal && \
     yum -y update && yum clean all
-RUN go get --tag=2.5.0b github.com/skynetservices/skydns && \
+RUN go get github.com/skynetservices/skydns && \
     cd $GOPATH/src/github.com/skynetservices/skydns && \
     go build -v && \
     go install -v
